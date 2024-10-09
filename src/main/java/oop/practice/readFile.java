@@ -18,8 +18,8 @@ public class readFile {
 
     public static JsonNode readInput() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        File inputFile = new File("src/main/resources/test-input.json");
-//        File inputFile = new File("src/main/resources/input.json");
+//        File inputFile = new File("src/main/resources/test-input.json");
+        File inputFile = new File("src/main/resources/inputx2.json");
         JsonNode data = mapper.readTree(inputFile).get("data");
 
         Scanner scanner = new Scanner(System.in);
