@@ -5,11 +5,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class readFile {
+
+    public static List<creature> creatureList = new ArrayList<>();
+
     public static JsonNode readInput() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         File inputFile = new File("src/main/resources/test-input.json");
@@ -29,20 +36,29 @@ public class readFile {
         {
             String entryAsString = entry.toString();
             //TODO function that parse the json
+            //getting the information about the creature from json
             JSONObject jsonpObject = new JSONObject(entryAsString);
-            System.out.println(jsonpObject.getInt("id"));
+            int id = jsonpObject.getInt("id");
+            Boolean isHuman = jsonpObject.has("isHumanoid")? jsonpObject.getBoolean("isHumanoid"): null;
+            String planet = jsonpObject.has("planet")? jsonpObject.getString("planet"): null;
+            int age = jsonpObject.has("age")? jsonpObject.getInt("age"): 0;
+            JSONArray jsonTraits = jsonpObject.has("traits") ? jsonpObject.getJSONArray("traits") : null;
 
-            if (jsonpObject.has("isHumanoid")) {System.out.println(jsonpObject.getBoolean("isHumanoid"));}
-            else {System.out.println("Null");}
-
-            if (jsonpObject.has("planet")) {System.out.println(jsonpObject.getString("planet"));}
-            else {System.out.println("Null");}
-
-            if (jsonpObject.has("age")) {System.out.println(jsonpObject.getInt("age"));}
-            else {System.out.println("Null");}
-
-            if (jsonpObject.has("traits")) {System.out.println(jsonpObject.getJSONArray("traits"));}
-            else {System.out.println("Null");}
+            //check if the creature have some traits and convert into an array of traits
+            if (jsonTraits != null) {
+                String[] traits = new String[jsonTraits.length()];
+                for (int i = 0; i < jsonTraits.length(); i++) {
+                    traits[i] = jsonTraits.getString(i);
+                }
+                creature creature = new creature(id, isHuman, planet, age, traits);
+//                creature.printCreature();
+                creatureList.add(creature);
+            }
+            else {
+                creature creature = new creature(id, isHuman, planet, age, null);
+//                creature.printCreature();
+                creatureList.add(creature);
+            }
         }
     }
 }
