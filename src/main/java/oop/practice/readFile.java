@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -20,6 +19,7 @@ public class readFile {
     public static JsonNode readInput() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         File inputFile = new File("src/main/resources/test-input.json");
+//        File inputFile = new File("src/main/resources/input.json");
         JsonNode data = mapper.readTree(inputFile).get("data");
 
         Scanner scanner = new Scanner(System.in);
@@ -35,13 +35,13 @@ public class readFile {
         for (JsonNode entry : data)
         {
             String entryAsString = entry.toString();
-            //TODO function that parse the json
+
             //getting the information about the creature from json
             JSONObject jsonpObject = new JSONObject(entryAsString);
             int id = jsonpObject.getInt("id");
             Boolean isHuman = jsonpObject.has("isHumanoid")? jsonpObject.getBoolean("isHumanoid"): null;
             String planet = jsonpObject.has("planet")? jsonpObject.getString("planet"): null;
-            int age = jsonpObject.has("age")? jsonpObject.getInt("age"): 0;
+            Integer age = jsonpObject.has("age")? jsonpObject.getInt("age"): null;
             JSONArray jsonTraits = jsonpObject.has("traits") ? jsonpObject.getJSONArray("traits") : null;
 
             //check if the creature have some traits and convert into an array of traits

@@ -20,6 +20,11 @@ public class Main {
 
     JsonNode data = readFile.readInput();
     readFile.parseInput(data);
+
+    for ( creature creature: readFile.creatureList){
+      creature.findUniverse();
+      creature.printCreature();
+    }
 //    mapper.writeValue(new File("src/main/resources/output/starwars.json"), starWars);
 //    mapper.writeValue(new File("src/main/resources/output/hitchhiker.json"), hitchhikers);
 //    mapper.writeValue(new File("src/main/resources/output/rings.json"), rings);

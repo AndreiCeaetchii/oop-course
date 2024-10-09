@@ -42,6 +42,21 @@
       "traits": [
         "BULKY"
       ]
+    },
+    {
+      "id": 13,
+      "planet": "Kashyyyk",
+      "age": 352,
+      "traits": [
+        "HAIRY",
+        "TALL"
+      ]
+    },
+    {
+      "id": 20,
+      "isHumanoid": false,
+      "planet": "Endor",
+      "age": 22
     }
   ]
 }
