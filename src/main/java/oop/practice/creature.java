@@ -19,6 +19,25 @@ public class creature {
         this.traits = traits  ;
     }
 
+    public int getId() {
+        return id;
+    }
+    public Boolean getIsHumanoid() {
+        return isHumanoid;
+    }
+    public String getPlanet() {
+        return planet;
+    }
+    public Integer getAge() {
+        return age;
+    }
+    public String[] getTraits() {
+        return traits;
+    }
+    public String getUniverse() {
+        return universe;
+    }
+
     public void printCreature() {
 //        System.out.println("Creature");
         System.out.print("ID: " + id + " ");

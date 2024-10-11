@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.Scanner;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -19,16 +18,9 @@ public class readFile {
     public static JsonNode readInput() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 //        File inputFile = new File("src/main/resources/test-input.json");
-        File inputFile = new File("src/main/resources/inputx2.json");
-        JsonNode data = mapper.readTree(inputFile).get("data");
+        File inputFile = new File("src/main/resources/input.json");
 
-        Scanner scanner = new Scanner(System.in);
-        for (JsonNode entry : data) {
-            String entryAsString = entry.toString();
-            System.out.println(entryAsString);
-        }
-        scanner.close();
-        return data;
+        return mapper.readTree(inputFile).get("data");
     }
 
     public static void parseInput(JsonNode data) throws IOException {
