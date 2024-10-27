@@ -13,9 +13,7 @@ import org.json.JSONObject;
 
 public class readFile {
 
-    public static List<Creature> creatureList = new ArrayList<>();
-
-    public static JsonNode readInput() throws IOException {
+    public static JsonNode readCreaturesFromFile() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 //        File inputFile = new File("src/main/resources/test-input.json");
         File inputFile = new File("src/main/resources/input.json");
@@ -23,7 +21,8 @@ public class readFile {
         return mapper.readTree(inputFile).get("data");
     }
 
-    public static void parseInput(JsonNode data) throws IOException {
+    public static List<Creature> parseCreatures(JsonNode data) throws IOException {
+        List<Creature> creatureList = new ArrayList<>();
         for (JsonNode entry : data)
         {
             String entryAsString = entry.toString();
@@ -52,5 +51,6 @@ public class readFile {
                 creatureList.add(creature);
             }
         }
+        return creatureList;
     }
 }

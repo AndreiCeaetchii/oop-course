@@ -1,6 +1,7 @@
 package oop.practice;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Classification {
@@ -100,4 +101,5 @@ public class Classification {
 
         return validHumanoid && validPlanet && validAge && validTraits;
     }
+
 }
