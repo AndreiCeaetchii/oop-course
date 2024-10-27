@@ -7,10 +7,12 @@ import java.io.IOException;
 
 public class Main {
   public static void main(String[] args) throws IOException {
-    JsonNode data = readFile.readInput();
-    readFile.parseInput(data);
+    JsonNode data = readFile.readCreaturesFromFile();
 
-    View.WriteInOutputFile();
+    //get the creatures from the file
+    var creatureList = readFile.parseCreatures(data);
+
+    View.WriteInOutputFile(creatureList);
 
   }
 }
