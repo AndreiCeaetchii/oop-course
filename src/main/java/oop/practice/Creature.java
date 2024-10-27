@@ -1,6 +1,6 @@
 package oop.practice;
 
-public class creature {
+public class Creature {
     private int id;
     private Boolean isHumanoid;
     private String planet;
@@ -8,7 +8,7 @@ public class creature {
     private String[] traits;
     private Classification universe;
 
-    public creature(int id, Boolean isHumanoid, String planet, Integer age, String[] traits) {
+    public Creature(int id, Boolean isHumanoid, String planet, Integer age, String[] traits) {
         this.id = id;
         this.isHumanoid = isHumanoid;
         this.planet = planet;

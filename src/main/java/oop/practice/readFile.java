@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 public class readFile {
 
-    public static List<creature> creatureList = new ArrayList<>();
+    public static List<Creature> creatureList = new ArrayList<>();
 
     public static JsonNode readInput() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
@@ -42,12 +42,12 @@ public class readFile {
                 for (int i = 0; i < jsonTraits.length(); i++) {
                     traits[i] = jsonTraits.getString(i);
                 }
-                creature creature = new creature(id, isHuman, planet, age, traits);
+                Creature creature = new Creature(id, isHuman, planet, age, traits);
 //                creature.printCreature();
                 creatureList.add(creature);
             }
             else {
-                creature creature = new creature(id, isHuman, planet, age, null);
+                Creature creature = new Creature(id, isHuman, planet, age, null);
 //                creature.printCreature();
                 creatureList.add(creature);
             }

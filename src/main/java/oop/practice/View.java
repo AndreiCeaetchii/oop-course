@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
 
-import com. fasterxml. jackson. core. JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class View {
@@ -19,7 +18,7 @@ public class View {
 
     public static void WriteInOutputFile() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        for (creature creature : readFile.creatureList) {
+        for (Creature creature : readFile.creatureList) {
             JSONObject creatureJson = new JSONObject();
             creatureJson.put("id", creature.getId());
             creatureJson.put("isHumanoid", creature.getIsHumanoid());
