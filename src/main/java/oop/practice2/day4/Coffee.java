@@ -17,14 +17,3 @@ class Coffee {
     }
 }
 
-enum Intensity {
-    LIGHT,
-    NORMAL,
-    STRONG
-}
-
-enum SyrupType {
-    MACADAMIA, VANILLA,
-    COCONUT, CARAMEL,
-    CHOCOLATE, POPCORN
-}

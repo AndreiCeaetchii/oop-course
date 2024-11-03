@@ -3,11 +3,11 @@ package oop.practice2.day4;
 import java.util.List;
 
 public class Barista {
-    public void makeCoffees(List<String> orders) {
-        for (String order : orders) {
+    public void makeCoffees(List<CoffeeOrder> orders) {
+        for (CoffeeOrder order : orders) {
             Coffee coffee = createCoffee(order);
             if (coffee != null) {
-                switch (order.toLowerCase()) {
+                switch (order.getType()) {
                     case "cappuccino":
                         ((Cappuccino) coffee).makeCappuccino();
                         break;
@@ -30,16 +30,16 @@ public class Barista {
         }
     }
 
-    private Coffee createCoffee(String order) {
-        switch (order.toLowerCase()) {
+    private Coffee createCoffee(CoffeeOrder order) {
+        switch (order.getType().toLowerCase()) {
             case "cappuccino":
-                return new Cappuccino(Intensity.NORMAL, 150);
+                return new Cappuccino(order.getIntensity(), order.getMlOfMilk());
             case "americano":
-                return new Americano(Intensity.STRONG, 100);
+                return new Americano(order.getIntensity(), order.getMlOfWater());
             case "pumpkin spice latte":
-                return new PumpkinSpiceLatte(Intensity.LIGHT, 150, 50);
+                return new PumpkinSpiceLatte(order.getIntensity(), order.getMlOfMilk(), order.getMgOfPumpkinSpice());
             case "syrup cappuccino":
-                return new SyrupCappuccino(Intensity.STRONG, 100, SyrupType.POPCORN);
+                return new SyrupCappuccino(order.getIntensity(), order.getMlOfMilk(), order.getSyrupType());
             default:
                 return null;
         }
