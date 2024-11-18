@@ -17,11 +17,15 @@ public class SyrupCappuccino extends Cappuccino {
         System.out.println(coffee + " syrup: " + syrup);
     }
 
-    public SyrupCappuccino makeSyrupCappuccino() {
-        System.out.println("\nMaking " + coffee);
-        System.out.println("Intensity set to " + this.getIntensity());
-        System.out.println("Adding " + this.mlOfMilk + " mls of milk");
+    protected void make() {
+        super.make();
         System.out.println("Adding " + syrup + " syrup");
+    }
+
+
+    public final SyrupCappuccino makeSyrupCappuccino() {
+        System.out.println("\nMaking " + coffee);
+        make();
         return this;
     }
 }

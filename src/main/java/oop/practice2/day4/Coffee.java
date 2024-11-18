@@ -15,5 +15,15 @@ class Coffee {
     public Intensity getIntensity() {
         return coffeeIntensity;
     }
+
+    protected void make(){
+        System.out.println("Coffee intensity: " + this.coffeeIntensity);
+    }
+
+    public final Coffee makeCoffee() {
+        System.out.println("\nMaking " + name);
+        make();
+        return this;
+    }
 }
 

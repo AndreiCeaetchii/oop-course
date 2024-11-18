@@ -15,10 +15,15 @@ public class Americano extends Coffee {
         System.out.println(coffeeName + " water: " + mlOfWater + " ml");
     }
 
-    public Americano makeAmericano() {
-        System.out.println("\nMaking " + coffeeName);
-        System.out.println("Intensity set to " + this.getIntensity());
+
+    protected void make(){
+        super.make();
         System.out.println("Adding " + mlOfWater + " mls of water");
+    }
+
+    public final Americano makeAmericano() {
+        System.out.println("\nMaking " + coffeeName);
+        make();
         return this;
     }
 }

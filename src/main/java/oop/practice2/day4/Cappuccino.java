@@ -2,7 +2,7 @@ package oop.practice2.day4;
 
 public class Cappuccino extends Coffee {
     protected final int mlOfMilk;
-    private static final String coffee = "Capuccino";
+    private static final String coffee = "Cappuccino";
 
     public Cappuccino(Intensity intensity, int mlOfMilk) {
         super(intensity);
@@ -15,10 +15,15 @@ public class Cappuccino extends Coffee {
         System.out.println(coffee + " milk: " + mlOfMilk + " ml");
     }
 
-    public Cappuccino makeCappuccino() {
-        System.out.println("\nMaking " + coffee);
-        System.out.println("Intensity set to " + this.getIntensity());
+    protected void make(){
+        super.make();
         System.out.println("Adding " + mlOfMilk + " mls of milk");
+
+    }
+
+    public final Cappuccino makeCappuccino() {
+        System.out.println("\nMaking " + coffee);
+        make();
         return this;
     }
 }
