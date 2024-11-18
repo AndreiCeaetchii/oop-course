@@ -21,7 +21,6 @@ public class Assistant {
         System.out.println("Assisting with displays for: " + assistantName);
 
         if (assignedDisplays.size() < 2){
-            System.out.println("----------------------------------------");
             System.out.println("Not enough displays to compare.");
         }
 
@@ -29,7 +28,6 @@ public class Assistant {
             for (int j = i + 1; j < assignedDisplays.size(); j++) {
                 Display current = assignedDisplays.get(i);
                 Display next = assignedDisplays.get(j);
-                System.out.println("....................................");
                 current.compareWithMonitor(next);
             }
         }
