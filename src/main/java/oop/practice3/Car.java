@@ -4,15 +4,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Car {
     private final int id;
-    private final String type;
-    private final String passengers;
+    private final CAR_TYPES type;
+    private final PASSENGER_TYPES passengers;
     private final boolean isDining;
     private final int consumption;
 
     public Car(
             @JsonProperty("id") int id,
-            @JsonProperty("type") String Type,
-            @JsonProperty("passengers") String passengers,
+            @JsonProperty("type") CAR_TYPES Type,
+            @JsonProperty("passengers") PASSENGER_TYPES passengers,
             @JsonProperty("isDining") boolean isDining,
             @JsonProperty("consumption") int consumption) {
         this.id = id;
@@ -25,11 +25,11 @@ public class Car {
     public int getId() {
         return id;
     }
-    public String getType() {
+    public CAR_TYPES getType() {
         return type;
     }
 
-    public String getPassengers() {
+    public PASSENGER_TYPES getPassengers() {
         return passengers;
     }
 
