@@ -4,7 +4,7 @@ public class GasStation implements Refuelable {
     private static int totalGasCarsServed = 0;
 
     @Override
-    public void refuel(String carId) {
+    public void refuel(int carId) {
         totalGasCarsServed++;
         System.out.println("Refueling gas car " + carId + ".");
     }
