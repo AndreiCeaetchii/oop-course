@@ -51,10 +51,10 @@ public class InterfaceTest {
 
     @Test
     public void testRefuel() {
-        gasStation1.refuel(4);
-        gasStation2.refuel(5);
-        electricStation.refuel(6);
-        electricStation.refuel(7);
+        gasStation1.refuel(4, 10);
+        gasStation2.refuel(5, 10);
+        electricStation.refuel(6, 10);
+        electricStation.refuel(7, 10);
 
         System.out.println();
         assertEquals(2, GasStation.getTotalGasCarsServed());
@@ -67,10 +67,10 @@ public class InterfaceTest {
         peopleDinner1.serveDinner(1);
         peopleDinner2.serveDinner(1);
         robotDinner.serveDinner(3);
-        gasStation1.refuel(4);
-        gasStation2.refuel(5);
-        electricStation.refuel(6);
-        electricStation.refuel(7);
+        gasStation1.refuel(4, 10);
+        gasStation2.refuel(5, 10);
+        electricStation.refuel(6, 10);
+        electricStation.refuel(7, 10);
 
         System.out.println();
         assertEquals(2, PeopleDinner.getTotalPeopleServed(), "Total people served should be 2");

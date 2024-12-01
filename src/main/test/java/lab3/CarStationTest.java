@@ -19,7 +19,7 @@ public class CarStationTest {
     public void setUp() {
         cars = new LinkedQueue<>(5);
         Dineable diningService = carId -> System.out.println("Serving dinner to: " + carId);
-        Refuelable refuelingService = (carId) -> System.out.println("Refueling: " + carId);
+        Refuelable refuelingService = (carId, consumption) -> System.out.println("Refueling: " + carId);
 
         carStation = new CarStation(diningService, refuelingService, cars);
     }
