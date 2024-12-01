@@ -1,9 +1,9 @@
 package oop.practice3;
 
 public class CarStation {
-    private Dineable diningService;
-    private Refuelable refuelingService;
-    private Queue<Car> queue;
+    private final Dineable diningService;
+    private final Refuelable refuelingService;
+    private final Queue<Car> queue;
 
     public CarStation(Dineable diningService, Refuelable refuelingService, Queue<Car> queue) {
         this.diningService = diningService;

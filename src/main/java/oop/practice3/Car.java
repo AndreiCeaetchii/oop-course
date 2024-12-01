@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Car {
     private final int id;
     private final CAR_TYPES type;
-    private final PASSENGER_TYPES passengers;
+    private final PASSENGER_TYPES passengersType;
     private final boolean isDining;
     private final int consumption;
 
@@ -17,7 +17,7 @@ public class Car {
             @JsonProperty("consumption") int consumption) {
         this.id = id;
         this.type = Type;
-        this.passengers = passengers;
+        this.passengersType = passengers;
         this.isDining = isDining;
         this.consumption = consumption;
     }
@@ -29,8 +29,8 @@ public class Car {
         return type;
     }
 
-    public PASSENGER_TYPES getPassengers() {
-        return passengers;
+    public PASSENGER_TYPES getPassengersType() {
+        return passengersType;
     }
 
     public boolean isDining() {
