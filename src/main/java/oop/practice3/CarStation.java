@@ -18,7 +18,7 @@ public class CarStation {
                 diningService.serveDinner(car.getId());
             }
 
-            refuelingService.refuel(car.getId());
+            refuelingService.refuel(car.getId(), car.getConsumption());
         }
     }
 
